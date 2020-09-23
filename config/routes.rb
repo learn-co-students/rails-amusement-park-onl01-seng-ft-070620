@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-end
+  root 'static#home'
+  resources :users, :attractions, :users, :rides, :sessions 
+  get '/signin', to: 'session#new', as: 'signin'
+end 
+  
+  
