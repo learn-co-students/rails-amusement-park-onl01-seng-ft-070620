@@ -1,0 +1,7 @@
+<h1><%= @user.name %>'s Profile</h1>
+
+<%= flash[:alert] if flash[:alert] %>
+
+<%= render partial: 'user', locals: {user: @user} %>
+
+<%= link_to 'See attractions', attractions_path %>
