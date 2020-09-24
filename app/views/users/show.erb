@@ -1,0 +1,9 @@
+<h1><%= @user.name %>'s Profile</h1>
+
+<h2><strong><%= "ADMIN" if current_user.admin %></strong></h2>
+
+<%= flash[:alert] if flash[:alert] %>
+
+<%= render partial: 'user', locals: {user: @user} %>
+
+<%= link_to 'See attractions', attractions_path %>
