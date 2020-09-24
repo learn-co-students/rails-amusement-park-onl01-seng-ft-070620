@@ -1,0 +1,16 @@
+<p>Name: <%= @attraction.name %></p>
+<p>Total Number of Users: <%= @attraction.total_users %></p>
+<p>Ticket Requirement: <%= @attraction.tickets %></p>
+<p>Height Requirement: <%= @attraction.min_height %> inches</p>
+<p>Nausea Rating: <%= @attraction.nausea_rating %></p>
+<p>Happiness Rating: <%= @attraction.happiness_rating %></p>
+
+<% if get_current_user.admin == true %>
+  <a href="<%= edit_attraction_path(@attraction) %>">Edit Attraction</a>
+<% else %>
+  <%= form_for @ride do |f| %>
+    <%= f.hidden_field :user_id %><br>
+    <%= f.hidden_field :attraction_id %><br>
+    <%= f.submit "Go on this ride" %>
+  <% end %>
+<% end %>
