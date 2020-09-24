@@ -14,8 +14,11 @@
 <%= render partial: 'users/user', locals: {user: current_user} %>
 
 
-
-<%= form_tag(attraction_path(@attraction)) do %>
-    <%= hidden_field_tag 'attraction_id', "#{@attraction.id}" %>
-    <%= submit_tag "Go on this ride" %>
+<% unless current_user.admin %>
+    <%= form_tag(attraction_path(@attraction)) do %>
+        <%= hidden_field_tag 'attraction_id', "#{@attraction.id}" %>
+        <%= submit_tag "Go on this ride" %>
+    <% end %>
+<% else %>
+    <%= link_to "Edit Attraction", edit_attraction_path(@attraction) %>
 <% end %>
