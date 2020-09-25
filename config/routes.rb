@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  # resources :rides
-  # resources :attractions
   root 'users#new'
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
