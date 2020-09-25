@@ -1,0 +1,11 @@
+<h1>Attractions</h1>
+
+<% if flash[:message] %>
+    <p><%= flash[:message] %></p>
+<% end %>
+
+<% if !current_user.admin %>
+    <%= render "customer" %>
+<% else %>
+    <%= render "admin" %>
+<% end %>

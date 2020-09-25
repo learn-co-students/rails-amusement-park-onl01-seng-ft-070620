@@ -1,0 +1,8 @@
+<h1><%= @attraction.name %></h1>
+
+
+<% if current_user.admin %>
+    <%= render "adjust" %>
+<% else %>
+    <%= render "ride" %>
+<% end %>
