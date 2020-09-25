@@ -17,7 +17,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+        
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+
+        <% if signed_in? %>
+          <a class="navbar-brand" href="<%= user_path(current_user) %>">Profile</a>
+          <a class="navbar-brand" data-method="post" href="<%= logout_path %>">Log Out</a>
+          
+        <% else %>
+          <a class="navbar-brand" href="/users/new">Sign Up</a>
+          <a class="navbar-brand" href="/signin">Log in</a>
+        <% end %>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">

@@ -1,0 +1,15 @@
+<h1><%= @user.name %>'s show page</h1>
+
+<% if flash[:message] %>
+    <br>
+    <% flash[:message].each do |m| %>
+    <p><%= m %></p>
+    <br>
+    <% end %>
+<% end %>
+
+<% if @user.admin %>
+    <%= render "admin" %>
+<% else %>
+    <%= render "customer" %>
+<% end %>
