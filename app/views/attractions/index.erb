@@ -1,0 +1,13 @@
+<% if !@user.admin %>
+    <% @attractions.each do |a| %>
+        <div><%= link_to "Go on #{a.name}", a %></div>
+    <% end %><br>
+<% end %>
+
+<% if @user.admin %>
+    <% @attractions.each do |a| %>
+        <div><%= link_to "Show #{a.name}", a %></div>
+    <% end %><br>
+
+    <%= link_to 'New Attraction', new_attraction_path %>
+<% end %>
