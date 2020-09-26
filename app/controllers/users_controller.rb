@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        # binding.pry
         if @user.save
             session[:user_id] = @user.id
             redirect_to user_path(@user)
@@ -14,10 +13,14 @@ class UsersController < ApplicationController
         end
     end
 
+    def show
+        @user = User.find_by(id: params[:id])
+    end
+
     private
 
     def user_params
-        params.require(:user).permit(:name, :nausea, :happiness, :tickets, :height, :password, :password_confirmation)
+        params.require(:user).permit(:name, :nausea, :happiness, :tickets, :height, :password)
         #add in admin param here? 
     end
 end
