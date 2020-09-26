@@ -1,0 +1,10 @@
+<%= form_for(@user) do |f| %>
+  Name: <%= f.text_field :name %><br>
+  Nausea: <%= f.number_field :nausea%><br>
+  Happiness: <%= f.number_field :happiness %><br>
+  Height: <%= f.number_field :height %><br>
+  Number of Tickets: <%= f.number_field :tickets %><br>
+  Password: <%= f.password_field :password %><br>
+  Confirm Password: <%= f.password_field :password_confirmation %><br>
+  <%= f.submit "Create User" %>
+<% end %>

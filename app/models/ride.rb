@@ -1,2 +1,8 @@
-class Ride < ActiveRecord::Base
+class Ride < ApplicationRecord
+    belongs_to :attraction
+    belongs_to :user
+
+    def take_ride
+        
+    end
 end
