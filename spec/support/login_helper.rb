@@ -25,7 +25,7 @@ module LoginHelper
 
   def admin_login
     select 'Walt Disney',from:'user_name'
-    fill_in("password", :with => "password")
+    fill_in("user[password]", :with => "password")  #changed password to user[password]
     click_button('Sign In')
   end
 
