@@ -5,10 +5,12 @@ class User < ApplicationRecord
     has_secure_password
 
     def mood
+      unless admin
         if self.happiness > self.nausea
             "happy"
         else 
             "sad"
         end
+      end
     end
 end
