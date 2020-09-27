@@ -4,6 +4,7 @@
   Happiness: <%= f.number_field :happiness %><br>
   Height: <%= f.number_field :height %><br>
   Number of Tickets: <%= f.number_field :tickets %><br>
-  Password: <%= f.password_field :password %><br>
+  Check box if you are a theme park owner <%= f.check_box :admin, {}, "true", "false"%><br>  
+  Password: <%= f.password_field :password %><br> %>
   <%= f.submit "Create User" %>
 <% end %>
