@@ -17,7 +17,7 @@
       <%= form_for(@ride, url: user_path(current_user), method: :get) do |f| %>
         <%= f.hidden_field :user_id %><br>
         <%= f.hidden_field :attraction_id %><br>
-        <%= f.submit "Go on this ride", class:"btn btn-light" %>
+        <%= f.submit "Go on this ride" %>
       <% end %>
   <%# <%= link_to '<button type="button">Go on this ride</button>'.html_safe, user_path(current_user)%> 
 <% end %>
