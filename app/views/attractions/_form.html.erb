@@ -1,0 +1,10 @@
+<%# could also do a form_tag here form_tag attractions_path do%>
+<%= form_for(@attraction) do |f| %>
+    Name: <%= f.text_field :name %><br>
+    Nausea Rating: <%= f.number_field :nausea_rating %><br>
+    Happiness Rating: <%= f.number_field :happiness_rating %><br>
+    Tickets: <%= f.number_field :tickets %><br>
+    Minimum Height to Ride (inches) <%= f.number_field :min_height %><br>
+    <%= f.submit %>
+<% end %>
+
