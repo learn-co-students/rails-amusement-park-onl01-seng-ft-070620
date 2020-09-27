@@ -77,7 +77,7 @@ RSpec.describe Ride, :type => :model do
     ride = Ride.create(:user_id => user.id, :attraction_id => attraction.id)
     ride.take_ride
     mindy = User.find_by(:name => "Mindy")
-    expect(mindy.nausea).to eq(7)
+    expect(mindy.nausea).to eq(2)
   end
 
   it "has a method 'take_ride' that updates the user's happiness" do
@@ -85,6 +85,6 @@ RSpec.describe Ride, :type => :model do
     ride = Ride.create(:user_id => user.id, :attraction_id => attraction.id)
     ride.take_ride
     mindy = User.find_by(:name => "Mindy")
-    expect(mindy.happiness).to eq(7)
+    expect(mindy.happiness).to eq(4)
   end
 end
