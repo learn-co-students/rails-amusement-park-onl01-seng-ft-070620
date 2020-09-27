@@ -1,11 +1,10 @@
-class RidesController < ApplicationController
-    def new
-        binding.pry
-    end
-
+require 'pry'
+class RidesController < ApplicationController   
+    
     def create
         ride = Ride.create(ride_params)
-        ride.take_ride
+        ride_result = ride.take_ride
+        flash.alert = ride_result
         redirect_to user_path(current_user)
     end
 
