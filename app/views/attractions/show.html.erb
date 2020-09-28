@@ -1,0 +1,10 @@
+<h1><%= @attraction.name%></h1>
+<p>Height: <%= @attraction.min_height%></p>
+<p>Nausea: <%= @attraction.nausea_rating%></p>
+<p>Happiness: <%= @attraction.happiness_rating%></p>
+<p>Tickets: <%= @attraction.tickets%></p>
+<% if @admin%>
+    <%= link_to "Edit Attraction", edit_attraction_path(@attraction)%>
+<%else%>
+    <%= button_to "Go on this ride", "/ride/#{@attraction.id}"%>
+<%end%>
