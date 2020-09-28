@@ -1,0 +1,11 @@
+<% @attractions.each do |attraction|%>
+    <h2><%= attraction.name%></h2>
+    <% if @admin%>
+        <p><%= link_to "Show #{attraction.name}", attraction_path(attraction)%></p>
+    <%else%>
+        <p><%= link_to "Go on #{attraction.name}", attraction_path(attraction)%></p>
+    <%end%>
+<%end%>
+<% if @admin %>
+    <%= link_to "New Attraction", "/attractions/new"%>
+<%end%>

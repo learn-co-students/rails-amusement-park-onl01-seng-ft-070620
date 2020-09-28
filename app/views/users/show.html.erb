@@ -1,6 +1,15 @@
+<%= link_to "Log Out", '/logout'%> <%= link_to "See attractions", '/attractions'%>
 <h1> <%= @user.name %> </h1>
-<p>Height: <%= @user.height%></p>
-<p>Nausea: <%= @user.nausea%></p>
-<p>Happiness: <%= @user.happiness%></p>
-<p>Tickets: <%= @user.tickets%></p>
-<p>Mood: <%= @user.mood %></p>
+<% if session[:ride_message] %>
+    <p><%= session[:ride_message]%></p>
+<%end%>
+<% session[:ride_message] = nil%>
+<%if !@user.admin%>
+    <p>Height: <%= @user.height%></p>
+    <p>Nausea: <%= @user.nausea%></p>
+    <p>Happiness: <%= @user.happiness%></p>
+    <p>Tickets: <%= @user.tickets%></p>
+    <p>Mood: <%= @user.mood %></p>
+<%else%>
+    <p>ADMIN</p>
+<%end%>
